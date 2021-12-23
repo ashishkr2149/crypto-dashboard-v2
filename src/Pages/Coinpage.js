@@ -3,11 +3,7 @@ import { SingleCoin } from '../config/api';
 import { useParams } from 'react-router-dom';
 import CoinInfo from '../Components/CoinInfo/CoinInfo'
 import axios from 'axios';
-// import ReactHtmlParser from 'react-html-parser';
 import './Coinpage.css';
-
-// , { processNodes, convertNodeToElement, htmlparser2 }
-
 const Coinpage = () => {
 
 	const { id } = useParams();

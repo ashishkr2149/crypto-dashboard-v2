@@ -1,8 +1,10 @@
 import React,{ useState, useEffect } from 'react'
 import axios from 'axios';
 import { CoinList } from '../../config/api';
-import { Link } from 'react-router-dom';
+import { SingleCoin } from '../../config/api';
 import './CoinsTable.css';
+import CoinInfo from '../CoinInfo/CoinInfo';
+import Pagination from '../Pagination/Pagination';
 import { useNavigate } from "react-router-dom";
 
 const CoinsTable = () => {
@@ -11,6 +13,9 @@ const CoinsTable = () => {
 	const [loading, setLoading] = useState(false);
 	const [search, setSearch] = useState('');
 	const [page, setPage] = useState(1);
+	// const [coinsByPage, setCoinsByPage] = useState([])
+
+	const itemsPerPage = 10;
 
 	const fetchCoins = async() => {
 		setLoading(true)
@@ -19,9 +24,11 @@ const CoinsTable = () => {
 		setLoading(false)
 	}
 
+	console.log(coins)	
+
 	useEffect(() => {
 		fetchCoins();
-	},[])
+	})
 
  	const navigate = useNavigate();
 
@@ -29,12 +36,17 @@ const CoinsTable = () => {
 			<h1>LOADING...</h1>
 			);
 
-
 	const filteredcoins = coins.filter((c)=>
 		c.name.toLowerCase().includes(search.toLowerCase())||c.symbol.toLowerCase().includes(search.toLowerCase())
 	)
 
-	const items = filteredcoins.slice((page-1)*10,(page-1)*10+10).map((coin) => { 
+	const allPages = Math.ceil(filteredcoins.length / itemsPerPage);
+
+	const onPageChange = (page: number = 1) => {
+    	setPage(page);
+	}
+
+	const items = filteredcoins?.slice((page - 1) * itemsPerPage, page * itemsPerPage).map((coin) => {
 		return(
 				<div className="coin-container"
 					onClick={() => navigate (`/coins/${coin.id}`)}
@@ -58,12 +70,14 @@ const CoinsTable = () => {
 								<p className="coin-percent green">+{coin.price_change_percentage_24h?.toFixed(2)}%</p>
 								)	
 							}
+							{/*<Coininfo coin={coin}/>*/}
 							<p className="coin-marketcap">Mkt Cap:{coin.market_cap.toLocaleString('en-IN', {style:'currency', currency:'INR'})}</p>
 						</div>
 					</div>
 				</div>
 		)
 	})
+
 	return(
 		<div className="list-container">
 			<div className="coin-search">
@@ -80,6 +94,7 @@ const CoinsTable = () => {
     		<div>
 				{items}
 			</div>
+			<Pagination allPagesNumber={allPages} itemsPerPage={10} itemsNumber={filteredcoins.length} pageChange={onPageChange}/>
 		</div>
 		)
 }

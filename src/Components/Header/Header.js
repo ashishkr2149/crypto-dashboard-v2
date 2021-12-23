@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+import { useNavigate } from "react-router-dom";
 import './Header.css';
 
 
@@ -9,11 +10,14 @@ import './Header.css';
 //   	]
 
 const Header = () => {
+
+	const navigate = useNavigate();
+
 	return (
 		<div className="app-bar">
 			<div className="container">
 				<div className="toolbar ">
-					<p className="title" >Crypto Dashboard</p>
+					<p className="title" onClick={() => navigate (`/`)}>Crypto Dashboard</p>
 					{/*<Select options={options} />*/}
 				</div>
 			</div>
