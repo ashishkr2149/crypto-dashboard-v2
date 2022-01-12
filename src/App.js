@@ -13,8 +13,8 @@ function App() {
       <Header />
       <Routes>
         {/*<Route path="/" element={<Homepage />} exact/>*/}
-        <Route path="/crypto-dashboard-v2" element={<Homepage />} exact/>
-        <Route path="/coins/:id" element={<Coinpage />} />
+        <Route path="/crypto-dashboard-v2/" element={<Homepage />} exact/>
+        <Route path="/crypto-dashboard-v2/coins/:id" element={<Coinpage />} />
       </Routes>
       <Alert />
       </div>
