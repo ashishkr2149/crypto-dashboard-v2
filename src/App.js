@@ -12,7 +12,7 @@ function App() {
     <div className="coin-app">
       <Header />
       <Routes>
-        <Route path="" element={<Homepage />} exact/>
+        <Route path="/" element={<Homepage />} />
         <Route path="/coins/:id" element={<Coinpage />} />
       </Routes>
       <Alert />
