@@ -30,7 +30,7 @@ const Header = () => {
 		<div className="app-bar">
 			<div className="container">
 				<div className="toolbar ">
-					<p className="title" onClick={() => navigate (`/`)}>Crypto Dashboard</p>
+					<p className="title" onClick={() => navigate (`/crypto-dashboard-v2`)}>Crypto Dashboard</p>
 					{/*<Select options={options} />*/}
 				</div>
 				<AuthModal show={show} handleClose={hideModal} />
