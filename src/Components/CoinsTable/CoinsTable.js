@@ -6,29 +6,20 @@ import './CoinsTable.css';
 import CoinInfo from '../CoinInfo/CoinInfo';
 import Pagination from '../Pagination/Pagination';
 import { useNavigate } from "react-router-dom";
+import { CryptoState } from '../../CryptoContext';
 
 const CoinsTable = () => {
-
-	const [coins, setCoins] = useState([]);
-	const [loading, setLoading] = useState(false);
 	const [search, setSearch] = useState('');
 	const [page, setPage] = useState(1);
 	// const [coinsByPage, setCoinsByPage] = useState([])
 
 	const itemsPerPage = 10;
 
-	const fetchCoins = async() => {
-		setLoading(true)
-		const { data } = await axios.get(CoinList());
-		setCoins(data);
-		setLoading(false)
-	}
-
-	console.log(coins)	
+	const{ coins, loading, fetchCoins} = CryptoState();	
 
 	useEffect(() => {
 		fetchCoins();
-	})
+	},[])
 
  	const navigate = useNavigate();
 
@@ -48,10 +39,10 @@ const CoinsTable = () => {
 
 	const items = filteredcoins?.slice((page - 1) * itemsPerPage, page * itemsPerPage).map((coin) => {
 		return(
-				<div className="coin-container"
-					onClick={() => navigate (`/coins/${coin.id}`)}
-                    key={coin.name}>
-					<div className="coin-row">
+				<div className="coin-container">
+					<div className="coin-row"
+						onClick={() => navigate (`/coins/${coin.id}`)}
+                    	key={coin.name}>
 						<div className="coin">
 							<img
 								src={coin?.image}

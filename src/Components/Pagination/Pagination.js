@@ -31,22 +31,22 @@ const Pagination = (props) => {
   return (
     <div className="pagination__container">
       <div
-        className={`pagination__button pagination__page-first ${currentPage === 1 ? 'pagination__button--disabled' : ''}`}
+        className={`pagination__button pagination__page-first ${(currentPage === 1||currentPage === 2)  ? 'pagination__button--disabled' : ''}`}
         onClick={() => onFirstPage()}
       >
         First
       </div>
       <div
-        className={`pagination__button ${currentPage === 1 && 'pagination__button--disabled'}`}
+        className={`pagination__button ${(currentPage === 1||currentPage === 2) && 'pagination__button--disabled'}`}
         onClick={() => onPreviousPage()}
       >
         Previous
       </div>
-      <div className={`pagination__button ${currentPage === 1 && 'pagination__button--disabled'}`}>
+      <div className={`pagination__button ${(currentPage === 1||currentPage === 2) && 'pagination__button--disabled'}`}>
         ...
       </div>
       <div 
-      	className={`pagination__button ${currentPage === 1 && 'pagination__button--disabled'}`}
+      	className={`pagination__button ${(currentPage === 1||currentPage === 2) && 'pagination__button--disabled'}`}
       	onClick={() => onSelectedPage(currentPage-2)}
       >
         {currentPage-2}
@@ -67,22 +67,22 @@ const Pagination = (props) => {
         {currentPage+1}
       </div>
       <div 
-      	className={`pagination__button ${currentPage === props.allPagesNumber && 'pagination__button--disabled'}`}
+      	className={`pagination__button ${(currentPage === props.allPagesNumber||currentPage === props.allPagesNumber-1) && 'pagination__button--disabled'}`}
       	onClick={() => onSelectedPage(currentPage+2)}
       >
         {currentPage+2}
       </div>
-      <div className={`pagination__button ${currentPage === props.allPagesNumber && 'pagination__button--disabled'}`}>
+      <div className={`pagination__button ${(currentPage === props.allPagesNumber||currentPage === props.allPagesNumber-1) && 'pagination__button--disabled'}`}>
         ...
       </div>
       <div
-        className={`pagination__button ${currentPage === props.allPagesNumber && 'pagination__button--disabled'}`}
+        className={`pagination__button ${(currentPage === props.allPagesNumber||currentPage === props.allPagesNumber-1) && 'pagination__button--disabled'}`}
         onClick={() => onNextPage()}
       >
         Next
       </div>
       <div
-        className={`pagination__button ${currentPage === props.allPagesNumber && ' pagination__button--disabled'}`}
+        className={`pagination__button ${(currentPage === props.allPagesNumber||currentPage === props.allPagesNumber-1) && ' pagination__button--disabled'}`}
         onClick={() => onLastPage()}
       >
         Last

@@ -1,5 +1,5 @@
 {
-  "homepage":"https://ashishkr2149.github.io/crypto-dashboard-v2",
+  "homepage": "https://ashishkr2149.github.io/crypto-dashboard-v2",
   "name": "cryptodashboard-v2",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
     "chart.js": "^3.6.2",
+    "firebase": "^9.6.1",
     "react": "^17.0.2",
     "react-alice-carousel": "^2.5.1",
     "react-chartjs-2": "^4.0.0",
@@ -22,8 +23,8 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -1,4 +1,16 @@
-.selectbutton{
+.login-container{
+	padding: 0.5rem 0.75rem;
+}
+
+.login-items{
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 100%;
+	padding: 0.5rem 0px;
+}
+
+button {
 	border: 1px solid gold;
 	borderRadius: 5px;
     padding: 10px;
@@ -13,7 +25,7 @@
     fontWeight: selected ? 700 : 500;*/
 }
 
-.selectbutton:hover{
+button:hover{
 	background-color: gold;
 	color: black;
 }

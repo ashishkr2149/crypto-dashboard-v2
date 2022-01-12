@@ -1,4 +1,34 @@
+.container{
+	display: flex;
+	justify-content: space-between;
+}
+
 .title{
 	cursor: pointer;
-	font-size: 65px;
+	font-size: 55px;
+	padding-left: 15px;
+	justify-content: left;
+}
+
+.login{
+	margin-right: 15px;
+	border: 1px solid gold;
+	borderRadius: 5px;
+    padding: 10px;
+    paddingLeft: 20px;
+    paddingRight: 20px;
+    fontFamily: Montserrat;
+    cursor: pointer;
+    /*width: 100%;*/
+    font-weight: 500px;
+}
+
+.login:hover{
+	background-color: gold;
+	color: black;
+}
+
+.active{
+	background-color: gold;
+	font-weight: 700px;
 }

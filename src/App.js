@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Homepage  from './Pages/Homepage';
-import Coinpage from './Pages/Coinpage'
+import Coinpage from './Pages/Coinpage';
+import Alert from './Components/Alert/Alert';
 import './App.css';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
@@ -14,7 +15,8 @@ function App() {
         <Route path="/" element={<Homepage />} exact/>
         <Route path="/coins/:id" element={<Coinpage />} />
       </Routes>
-    </div>
+      <Alert />
+      </div>
     </BrowserRouter>
   );
 }

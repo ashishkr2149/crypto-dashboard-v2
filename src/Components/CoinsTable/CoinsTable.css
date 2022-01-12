@@ -29,17 +29,17 @@
 .coin-container{
 	display: flex;
 	justify-content: center ;
-	cursor: pointer;
 }
 
 .coin-row{
+	cursor: pointer;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: center;
 	height: 80px;
 	border-bottom: 1px solid #d7d7d7;
-	width:  1200px;
+	width:  80%;
 }
 
 .coin{

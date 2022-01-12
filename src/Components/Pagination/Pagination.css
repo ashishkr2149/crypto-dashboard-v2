@@ -20,11 +20,12 @@
 
 .pagination__button:hover{
 	border-radius: 50px;
-	background-color: #bfbfbf;
+	background-color: gold;
 }
 
 .pagination__page-active{
 	border-radius: 50px;
-	background-color: #bfbfbf;
+	background-color: gold;
+	color: black;
 	cursor: default;
 }
