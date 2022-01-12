@@ -41,7 +41,7 @@ const CoinsTable = () => {
 		return(
 				<div className="coin-container">
 					<div className="coin-row"
-						onClick={() => navigate (`/coins/${coin.id}`)}
+						onClick={() => navigate (`/crypto-dashboard-v2/coins/${coin.id}`)}
                     	key={coin.name}>
 						<div className="coin">
 							<img
